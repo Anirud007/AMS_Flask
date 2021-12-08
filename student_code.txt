@@ -1,0 +1,60 @@
+@app.route("/student", methods=['GET', 'POST'])
+def student_page():
+    if request.method == 'POST':
+        #Getting data from HTML page
+        std_id = request.form['stdid']
+        std_password = request.form['stdpass']
+        std_name = request.form['stdname']
+
+        #Making database connection
+        connection = sqlite3.connect(currentdirectory + "/AMS.db")
+        cursor = connection.cursor()
+
+        #fetching student id from student table and storing it in data1
+        cursor.execute("SELECT std_id FROM student")
+        data1 = cursor.fetchall()
+
+        #converting the list of tuples into list
+        data1_list = []
+
+        for d in data1:
+            for x in d:
+                data1_list.append(x)
+
+        #fetching student id from student_validation table and storing it in data2
+        cursor.execute("SELECT id FROM studentvalidation")
+        data2 = cursor.fetchall()
+
+        #converting the list of tuples into list
+        data2_id_list = []
+
+        for dd in data2:
+            for y in dd:
+                data2_id_list.append(y)
+
+        #fetching student password from student_validation table and storing it in data3
+        cursor.execute("SELECT password FROM studentvalidation WHERE id = {}".format(std_id))
+        data3 = cursor.fetchall()
+        print("data = ", data3)
+
+        #converting the list of tuples into list
+        data3_pass_list = []
+        for ddd in data3:
+            for z in ddd:
+                data3_pass_list.append(z)
+
+        if str(std_id) in str(data2_id_list):
+            if str(std_password) in str(data3_pass_list):
+                if str(std_id) in str(data1_list):
+                    flash("Your Attendace has Already bean Marked For the Day")
+                else:
+                    cursor.execute("INSERT INTO student VALUES(?, ?, ?, ?)", (std_id, std_name, std_password, datetime.now().strftime("%H:%M")))
+                    flash("Your Attendace Is Successfully Marked For The Day")
+                    connection.commit()
+                    connection.close()
+            else:
+                flash("Invalid password")
+        else:
+            flash("Invalid Entry")
+
+    return render_template("student.html")

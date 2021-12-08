@@ -1,0 +1,7 @@
+if str(std_id) in str(data1_list):
+            flash("Your Attendace has Already bean Marked For the Day")
+        else:
+            cursor.execute("INSERT INTO student VALUES(?, ?, ?, ?)", (std_id, std_name, std_password, datetime.now().strftime("%H:%M")))
+            flash("Your Attendace Is Successfully Marked For The Day")
+            connection.commit()
+            connection.close()
