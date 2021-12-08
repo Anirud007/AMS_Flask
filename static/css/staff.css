@@ -1,0 +1,26 @@
+body{
+    margin:auto;
+    padding:auto;
+}
+#staffid {
+    font: 20px sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+#staffpassword_l {
+    font: 20px sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+#staffusername {
+    border: 1px solid;
+    border-radius: 15px;
+    padding:8px;
+    z-index: inherit;
+}
+#staffpassword {
+    border: 1px solid;
+    border-radius: 15px;
+    padding:8px;
+    z-index: inherit;
+}

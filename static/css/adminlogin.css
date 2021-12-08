@@ -1,0 +1,26 @@
+body{
+    margin:auto;
+    padding:auto;
+}
+#adminid {
+    font: 20px sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+#adminpassword_l {
+    font: 20px sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+#adminusername {
+    border: 1px solid;
+    border-radius: 15px;
+    padding:8px;
+    z-index: inherit;
+}
+#adminpassword {
+    border: 1px solid;
+    border-radius: 15px;
+    padding:8px;
+    z-index: inherit;
+}

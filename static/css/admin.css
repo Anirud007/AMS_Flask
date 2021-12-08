@@ -1,0 +1,15 @@
+#bt {
+    width:100%;
+    border:1.5px solid;
+    border-radius:5px;
+    color:#212529;
+    background-color: white;
+    padding:6px;
+    transition: ease-in;
+    transition-duration: 0.4s;
+}
+#bt:hover {
+    background-color:#212529;
+    color: white;
+    transition: ease-in-out;
+}

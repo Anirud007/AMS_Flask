@@ -1,0 +1,26 @@
+body{
+    margin:auto;
+    padding:auto;
+}
+#studentid {
+    font: 20px sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+#studentpassword_l {
+    font: 20px sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+#studentusername {
+    border: 1px solid;
+    border-radius: 15px;
+    padding:8px;
+    z-index: inherit;
+}
+#studentpassword {
+    border: 1px solid;
+    border-radius: 15px;
+    padding:8px;
+    z-index: inherit;
+}
